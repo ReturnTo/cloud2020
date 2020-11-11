@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 映射哪个接口   通过ctrl+鼠标左键可以点入  说明进行关联了-->
+<mapper namespace="com.atguigu.springcloud.dao.PaymentDao">
+    <!--   type-aliases-package: com.atguigu.springcloud.entities       #所有Entity别名类所在包
+        所以直接写Payment就可以
+        id:方法
+        parameterType：参数类型
+        useGeneratedKeys：如果插入的表id以自增列为主键，则允许 JDBC 支持自动生成主键，并可将自动生成的主键id返回
+        keyProperty：keyProperty的值是对象的属性值  返回的值给到哪个属性
+        resultMap：结果集
+    -->
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment(serial) values(#{serial})
+    </insert>
+
+    <resultMap id="BaseResultMap" type="com.atguigu.springcloud.entities.Payment">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="serial" property="serial" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getPaymentById" parameterType="Long" resultMap="BaseResultMap">
+        select * from payment where id=#{id};
+    </select>
+</mapper>
