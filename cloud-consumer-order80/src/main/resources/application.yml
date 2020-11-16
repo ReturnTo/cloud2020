@@ -15,3 +15,6 @@ eureka:
     service-url:
       #入驻哪个主机的哪个端口
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: order8003
+    prefer-ip-address: true  #显示IP信息
