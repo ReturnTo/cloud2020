@@ -1,5 +1,5 @@
 server:
-  port: 8003
+  port: 8000
 
 #Eureka中注册的项目名称
 spring:
