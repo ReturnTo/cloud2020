@@ -3,8 +3,8 @@ server:
 
 #Eureka中注册的项目名称
 spring:
-    application:
-      name: cloud-order-service
+  application:
+    name: cloud-order-service
 #通用配置
 eureka:
   client:
