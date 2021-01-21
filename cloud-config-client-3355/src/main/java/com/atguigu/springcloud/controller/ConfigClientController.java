@@ -1,4 +1,4 @@
-package com.atguigu.springcloud.Controller;/*
+package com.atguigu.springcloud.controller;/*
  * @Author 裴舒凯
  * @Date 2021-01-05 21:48
  */
