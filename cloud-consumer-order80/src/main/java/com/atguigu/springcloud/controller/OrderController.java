@@ -68,8 +68,16 @@ public class OrderController {
         //获取URL
         URI uri = serviceInstance.getUri();
         //返回获取的数据
-        return restTemplate.getForObject(uri+"/payment/lb",String.class);
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/lb",String.class);
     }
 
+// ====================> zipkin+sleuth
+     @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin()
+    {
+
+        String result = restTemplate.getForObject(PAYMENT_URL+"/payment/zipkin/", String.class);
+        return result;
+     }
 
 }
